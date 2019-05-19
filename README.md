@@ -233,8 +233,18 @@ Confusion matrix for
 
 使用自定义测试数据所得结果：  
   
-![emmm]()  
+![emmm](https://github.com/Heured/PCV_Assignment_09/blob/master/ImgToShow/04.png)  
   
-![emmm]()  
-  
+```python
+Accuracy: 1.0
+Confusion matrix for
+['A' 'B' 'C' 'F' 'P' 'V']
+[[13.  0.  0.  0.  0.  0.]
+ [ 0. 13.  0.  0.  0.  0.]
+ [ 0.  0. 13.  0.  0.  0.]
+ [ 0.  0.  0. 13.  0.  0.]
+ [ 0.  0.  0.  0. 13.  0.]
+ [ 0.  0.  0.  0.  0. 13.]]
+```
+从结果看出数据量不够多导致了混淆不明显。
 
