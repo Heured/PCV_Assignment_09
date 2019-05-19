@@ -114,4 +114,36 @@ title('dense SIFT')
 show()
 ```
 结果如图：  
+  ![emmmm](https://github.com/Heured/PCV_Assignment_09/blob/master/ImgToShow/02.png)  
+  
+### 手势识别
+  生成dSIFT特征：  
+  
+```python
+# -*- coding: utf-8 -*-
+import os
+from PCV.localdescriptors import sift, dsift
+from pylab import  *
+from PIL import Image
+
+imlist=['gesture/train/C-uniform02.ppm','gesture/train/B-uniform01.ppm',
+        'gesture/train/A-uniform01.ppm','gesture/train/Five-uniform01.ppm',
+        'gesture/train/Point-uniform01.ppm','gesture/train/V-uniform01.ppm']
+
+figure()
+for i, im in enumerate(imlist):
+    print (im)
+    # 获取每幅图像的稠密SIFT特征
+    dsift.process_image_dsift(im, im[:-3]+'dsift',90,40,True)
+    l,d = sift.read_features_from_file(im[:-3]+'dsift')
+    dirpath, filename=os.path.split(im)
+    im = array(Image.open(im))
+    #显示手势含义title
+    titlename=filename[:-14]
+    subplot(2,3,i+1)
+    sift.plot_features(im,l,True)
+    title(titlename)
+show()
+```
+结果：  
   ![emmmm]()
